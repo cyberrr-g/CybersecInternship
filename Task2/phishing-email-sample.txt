@@ -1,0 +1,26 @@
+## Phishing Email Sample
+
+
+From: Microsoft Account Security <security-alert@email.com>
+To: amannn@hotmail.com
+Date: August 29, 2026
+Subject: URGENT: Unusual Sign-In Attempt – Action Required
+
+Dear User,
+
+We detected an unusual sign-in attempt on your Microsoft account
+from an unknown device.
+
+For your security, your account may be temporarily restricted.
+
+Please verify your account within 24 hours to prevent interruption
+of your Microsoft services.
+
+[http://microsof.security-alert/amannn/login/crenditials]
+
+If you do not verify your account within the required time,
+access to your email and other services may be suspended.
+
+Thank you,
+Microsoft Account Security Team
+
