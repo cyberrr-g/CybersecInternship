@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 3 - Vulnerability Assessment Report</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f4f6f8;
+        color: #222;
+        line-height: 1.6;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 30px auto;
+        background: white;
+        padding: 35px;
+        box-shadow: 0 2px 12px rgba(0,0,0,.08);
+        border-radius: 10px;
+    }
+    h1, h2 { color: #1f2937; }
+    h1 { border-bottom: 3px solid #374151; padding-bottom: 12px; }
+    .notice {
+        background: #fff3cd;
+        border: 1px solid #ffe69c;
+        padding: 15px;
+        border-radius: 7px;
+        margin: 20px 0;
+    }
+    .summary {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+        margin: 20px 0;
+    }
+    .card {
+        padding: 18px 10px;
+        border-radius: 8px;
+        text-align: center;
+        background: #eef2f7;
+    }
+    .card strong {
+        display: block;
+        font-size: 28px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0 30px;
+    }
+    th, td {
+        border: 1px solid #d1d5db;
+        padding: 12px;
+        text-align: left;
+        vertical-align: top;
+    }
+    th { background: #e5e7eb; }
+    .high { font-weight: bold; }
+    .finding {
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        padding: 18px;
+        margin: 20px 0;
+    }
+    code {
+        background: #f1f5f9;
+        padding: 3px 6px;
+        border-radius: 4px;
+    }
+    .footer {
+        margin-top: 35px;
+        padding-top: 15px;
+        border-top: 1px solid #ddd;
+        color: #666;
+        font-size: 14px;
+    }
+    @media (max-width: 700px) {
+        .summary { grid-template-columns: repeat(2, 1fr); }
+        .container { margin: 10px; padding: 20px; }
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Task 3: Basic Vulnerability Scan</h1>
+
+<div class="notice">
+<strong>DEMONSTRATION / MOCK REPORT:</strong>
+This HTML report contains illustrative vulnerability findings and counts.
+They are NOT actual results from a GVM/OpenVAS scan. Replace the example
+data with your real scan results before submitting the internship task.
+</div>
+
+<h2>1. Objective</h2>
+<p>
+The objective of this task is to perform a basic vulnerability assessment
+of my own computer using a vulnerability scanner and identify common
+security weaknesses.
+</p>
+
+<h2>2. Tool Used</h2>
+<ul>
+    <li>Greenbone/OpenVAS (GVM)</li>
+    <li>Kali Linux</li>
+    <li>GVM CLI tools</li>
+</ul>
+
+<h2>3. Scan Target</h2>
+<p><strong>Target:</strong> <code>127.0.0.1</code></p>
+<p><strong>Description:</strong> Local Kali Linux machine.</p>
+
+<h2>4. Scan Type</h2>
+<p><strong>Scan Profile:</strong> Full and Fast / Full Vulnerability Scan</p>
+<p><em>Replace this with the exact profile used in the actual scan.</em></p>
+
+<h2>5. Demonstration Result Summary</h2>
+
+<div class="summary">
+    <div class="card"><strong>0</strong>Critical</div>
+    <div class="card"><strong>2</strong>High</div>
+    <div class="card"><strong>5</strong>Medium</div>
+    <div class="card"><strong>7</strong>Low</div>
+    <div class="card"><strong>12</strong>Informational</div>
+</div>
+
+<p><em>All counts above are example values only.</em></p>
+
+<table>
+<thead>
+<tr>
+    <th>Severity</th>
+    <th>Example Count</th>
+    <th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Critical</td><td>0</td><td>Immediate</td></tr>
+<tr><td>High</td><td>2</td><td>High priority</td></tr>
+<tr><td>Medium</td><td>5</td><td>Review and remediate</td></tr>
+<tr><td>Low</td><td>7</td><td>Lower priority</td></tr>
+<tr><td>Informational</td><td>12</td><td>For awareness</td></tr>
+</tbody>
+</table>
+
+<h2>6. Demonstration Findings</h2>
+
+<div class="finding">
+<h3>Finding 1 — Outdated Software Component</h3>
+<p><strong>Severity:</strong> High <em>(example)</em></p>
+<p><strong>CVSS:</strong> 8.1 <em>(example only)</em></p>
+<p><strong>Affected Component:</strong> Example software package</p>
+<p><strong>Description:</strong>
+An outdated software component may contain known security weaknesses.
+</p>
+<p><strong>Potential Impact:</strong>
+A known weakness could potentially be exploited if the required conditions
+are met.
+</p>
+<p><strong>Recommended Remediation:</strong>
+Update the affected package to a supported, patched version.
+</p>
+</div>
+
+<div class="finding">
+<h3>Finding 2 — Insecure Service Configuration</h3>
+<p><strong>Severity:</strong> High <em>(example)</em></p>
+<p><strong>CVSS:</strong> 7.5 <em>(example only)</em></p>
+<p><strong>Affected Component:</strong> Example network service</p>
+<p><strong>Description:</strong>
+A service may expose unnecessary functionality or use an insecure configuration.
+</p>
+<p><strong>Potential Impact:</strong>
+Increased attack surface or unauthorized access may be possible depending
+on the service and configuration.
+</p>
+<p><strong>Recommended Remediation:</strong>
+Disable unnecessary services, restrict network access with firewall rules,
+and apply secure configuration settings.
+</p>
+</div>
+
+<div class="finding">
+<h3>Finding 3 — Missing Security Update</h3>
+<p><strong>Severity:</strong> Medium <em>(example)</em></p>
+<p><strong>CVSS:</strong> 6.5 <em>(example only)</em></p>
+<p><strong>Affected Component:</strong> Example package</p>
+<p><strong>Description:</strong>
+The installed version may be missing a security update.
+</p>
+<p><strong>Potential Impact:</strong>
+A known vulnerability may remain exploitable.
+</p>
+<p><strong>Recommended Remediation:</strong>
+Apply the vendor's security update and keep packages patched.
+</p>
+</div>
+
+<h2>7. Risk Prioritization</h2>
+<p>
+Vulnerabilities should be prioritized using more than CVSS alone.
+Important factors include:
+</p>
+<ul>
+    <li>Whether the affected service is exposed</li>
+    <li>Exploitability</li>
+    <li>Whether exploitation is actively occurring</li>
+    <li>Importance of the affected asset</li>
+    <li>Availability of a patch or mitigation</li>
+    <li>Potential impact</li>
+</ul>
+
+<h2>8. Remediation Plan</h2>
+<ol>
+    <li>Update the operating system and installed packages.</li>
+    <li>Remove or disable unnecessary services.</li>
+    <li>Restrict exposed services with firewall rules where appropriate.</li>
+    <li>Apply vendor-recommended security patches.</li>
+    <li>Review insecure configurations identified by the scanner.</li>
+    <li>Re-run the vulnerability scan after remediation.</li>
+    <li>Compare the new results with the original scan.</li>
+</ol>
+
+<h2>9. Conclusion</h2>
+<p>
+This vulnerability assessment demonstrates the process of scanning a local
+computer, reviewing security findings, understanding severity, and
+identifying remediation steps.
+</p>
+
+<div class="footer">
+<strong>Submission reminder:</strong>
+Replace all demonstration/example findings, CVSS values, counts, and
+screenshots with the actual GVM/OpenVAS scan results before submitting.
+</div>
+
+</div>
+</body>
+</html>
