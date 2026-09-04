@@ -1,0 +1,114 @@
+Task 4
+
+
+# FIREWALL CONFIGURATION AND TRAFFIC FILTERING USING UFW
+
+Tool Used: UFW (Uncomplicated Firewall) – Linux/Kali Linux
+
+1. FIREWALL COMMANDS
+
+---
+
+Check firewall status:
+
+sudo ufw status verbose
+
+List existing rules:
+
+sudo ufw status numbered
+
+Check whether port 23 is in use:
+
+sudo ss -tulnp | grep ':23'
+
+Block Telnet port 23:
+
+sudo ufw deny 23/tcp
+
+Allow SSH port 22:
+
+sudo ufw allow 22/tcp
+
+Enable the firewall:
+
+sudo ufw enable
+
+Test port 23:
+
+nc -vz 127.0.0.1 23
+
+Remove the temporary port 23 rule:
+
+sudo ufw delete deny 23/tcp
+
+Verify final configuration:
+
+sudo ufw status numbered
+
+2. FIREWALL RULES APPLIED
+
+---
+
+RULE 1 – BLOCK TELNET
+
+Port     : 23
+Protocol : TCP
+Action   : DENY
+Purpose  : Block incoming Telnet connections
+
+RULE 2 – ALLOW SSH
+
+Port     : 22
+Protocol : TCP
+Action   : ALLOW
+Purpose  : Permit SSH connections
+
+3. TRAFFIC FILTERING
+
+---
+
+UFW filters network traffic by comparing incoming connection requests
+with the configured firewall rules.
+
+Example:
+
+Incoming TCP Traffic
+|
+v
+UFW Firewall
+|
+Check Port
+/      
+23        22
+|         |
+DENY      ALLOW
+|         |
+BLOCK      PERMIT
+
+Port 23 → Traffic is denied by the firewall rule.
+
+Port 22 → Traffic is permitted because SSH is allowed.
+
+4. TESTING AND RESULT
+
+---
+
+The firewall was configured successfully. A DENY rule was applied to
+TCP port 23 to block Telnet traffic, while TCP port 22 was allowed
+for SSH.
+
+The port 23 rule was tested and then removed to restore the firewall
+configuration.
+
+Final verification:
+
+sudo ufw status numbered
+
+5. CONCLUSION
+
+---
+
+UFW provides a simple method to control network access on Linux.
+Firewall rules can be used to allow required services and block
+unnecessary or unwanted traffic, reducing the system's network
+exposure.
